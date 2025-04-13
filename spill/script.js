@@ -39,7 +39,7 @@ function checkWin() {
 // Function to restart the game
 function restartGame() {
     eggsFound = 0;
-    document.getElementById('eggCounter').innerText = 'Eggs Found: 0';
+    document.getElementById('eggCounter').innerText = 'Antall egg funnet: 0';
     createEggs();
     document.getElementById('restartButton').style.display = 'none';
 }
