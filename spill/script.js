@@ -3,14 +3,18 @@ const totalEggs = 5; // Total number of eggs to find
 let eggsFound = 0;
 let revealedWords = 0;
 
+function revealWord() {
+    let revealedStr = secretWords.split(" ").slice(0,revealedWords).join(" ");
+    let secretStr = secretWords.split(" ").slice(revealedWords).join(" ").replace(/\S/g, 'x');
+    document.getElementById('revealedWords').innerText = `${revealedStr} ${secretStr}`;
+}
+
 // Function to create eggs dynamically
 function createEggs() {
     const gameArea = document.getElementById('gameArea');
     gameArea.innerHTML = ''; // Clear previous eggs
-    let revealedStr = secretWords.split(" ").slice(0,revealedWords).join(" ");
-    let secretStr = secretWords.split(" ").slice(revealedWords).join(" ").replace(/\S/g, 'x');
-    document.getElementById('revealedWords').innerText = `${revealedStr} ${secretStr}`;
 
+    revealWord();
     for (let i = 0; i < totalEggs; i++) {
         const egg = document.createElement('div');
         egg.classList.add('golden-egg');
@@ -40,6 +44,7 @@ function checkWin() {
         revealedWords++;
         const secretWord = secretWords.split(' ')[revealedWords - 1];
         alert(`Gratulerer! Du har funnet alle eggene! Neste ord i rebusen er: "${secretWord}".`);
+        revealWord();
         document.getElementById('restartButton').style.display = 'block';
     }
 }
