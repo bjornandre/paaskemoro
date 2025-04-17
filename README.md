@@ -1,4 +1,4 @@
-# Velkommen til pPåskerebus for familien Berntsen Skaar 2025
+# Velkommen til påskerebus for familien Berntsen Skaar 2025
 
 ## Her ligger neste oppgave
 
